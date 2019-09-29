@@ -1,1 +1,0 @@
-print('This {} is a {} year old'.format('kid', 23))
