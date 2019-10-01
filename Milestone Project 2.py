@@ -3,7 +3,6 @@ import random
 import CardShuffle
 
 class Deck:
-    import random
     #import the random library
     #Set minimum and maximum bet amounts
     minimum_bet = 5
@@ -29,17 +28,23 @@ class Deck:
         self.faceCards = ["A","J","Q","K"]
         self.cards.extend(self.faceCards)
         random.shuffle(self.cards)
-        print(self.cards)
-
-#create method for player to cut card
-    def cutCard(self):
+        #print(self.cards)
         print("There are 52 cards in the deck.")
+        #Cards = int(input("Please select a number between 0 and 51 to cut: "))
         while True:
             try:
-                Cards = input("Please select a number between 0 and 51 to cut: ")
-                print(CardShuffle.card_shuffle(self.cards))
+                Cards = int(input("Please select a number between 0 and 51 to cut: "))
+                self.NewCards = self.cards[Cards:51]
+                print(self.NewCards)
+                break
             except:
                 print("Please enter a number between 0 and 51")
+
+    def ShareCards(self):
+        
+
+
+
 
 
 
