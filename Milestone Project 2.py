@@ -34,20 +34,24 @@ class Deck:
         while True:
             try:
                 Cards = int(input("Please select a number between 0 and 51 to cut: "))
-                self.NewCards = self.cards[Cards:51]
+                self.NewCards = self.cards[Cards:52]
                 print(self.NewCards)
-                break
+                playerCards = []
+                dealerrcards = []
+                for i in self.NewCards:
+                    playerCards.append(i)
+                    print(playerCards)
+                    if len(playerCards) == 2:
+                        hit_or_stand = input("Do you wish to hit, stand or surrender? ")
+                        if hit_or_stand.lower() == "Hit":
+                            continue
+                        elif hit_or_stand.lower() == "stand":
+                            break
+                        elif hit_or_stand.lower() == "surrender":
+                            print("Your Return is {}".format(self.amount / 2))
+
             except:
                 print("Please enter a number between 0 and 51")
-
-    def ShareCards(self):
-        
-
-
-
-
-
-
 
 
 
